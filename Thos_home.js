@@ -42,7 +42,12 @@ function closeToggleMenu(event){
 
 // Create box shadow for header
 // How to scroll at the top and box shadow will be disappeared
-function headerBoxShadow(){
+function headerBoxShadow(event){
  let $headerPart = document.getElementById('header-part')
+ 
+ if (window.top.scrollY === 0) {
+    $headerPart.classList.remove('box-shadow')
+    return
+ }
  $headerPart.classList.add('box-shadow')
 }
